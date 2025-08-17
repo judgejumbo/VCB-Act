@@ -7,9 +7,9 @@ export default function ChatPage() {
     <div className="container mx-auto max-w-4xl p-6">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl font-bold">AI Assistant</h1>
+        <h1 className="text-2xl font-bold">AI Bugta Act Assistant</h1>
         <p className="text-muted-foreground">
-          Ask questions and get intelligent responses powered by n8n workflows
+          Get Answer Based On The Bugta Act
         </p>
       </div>
 

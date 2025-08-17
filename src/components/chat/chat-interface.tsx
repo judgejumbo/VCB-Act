@@ -119,11 +119,16 @@ export function ChatInterface() {
 
   return (
     <div className="flex h-[600px] flex-col">
-      <Card className="flex-1">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Bot className="h-5 w-5" />
-            AI Assistant Chat
+      <Card className="flex-1 shadow-xl border-0 bg-gradient-to-br from-background to-muted/20">
+        <CardHeader className="border-b bg-gradient-to-r from-primary/5 to-secondary/5 rounded-t-lg">
+          <CardTitle className="flex items-center gap-2 text-xl">
+            <div className="p-2 rounded-lg bg-green-100 dark:bg-green-900/30">
+              <Bot className="h-5 w-5 text-green-600" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-green-600">Bugta Act: AI Assistant</span>
+              <span className="text-sm font-normal text-muted-foreground">Get Answer Based On The Bugta Act</span>
+            </div>
           </CardTitle>
         </CardHeader>
         <CardContent className="flex h-full flex-col p-0">
@@ -133,9 +138,9 @@ export function ChatInterface() {
               <div className="flex h-full items-center justify-center text-center">
                 <div className="space-y-2">
                   <MessageSquare className="mx-auto h-12 w-12 text-muted-foreground" />
-                  <h3 className="text-lg font-semibold">Start a conversation</h3>
+                  <h3 className="text-lg font-semibold">Bugta Act: AI Assistant</h3>
                   <p className="text-sm text-muted-foreground">
-                    Ask me anything! I&apos;m here to help with your questions.
+                    Get Answer Based On The Bugta Act
                   </p>
                 </div>
               </div>
@@ -155,7 +160,7 @@ export function ChatInterface() {
                             {message.timestamp.toLocaleTimeString()}
                           </span>
                         </div>
-                        <div className="rounded-lg bg-muted p-4">
+                        <div className="rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 p-4 shadow-sm">
                           <div className="text-lg leading-relaxed whitespace-pre-wrap">{message.message}</div>
                         </div>
                       </div>
@@ -169,7 +174,7 @@ export function ChatInterface() {
                         </div>
                         <div className="flex-1 space-y-2">
                           <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium">AI Assistant</span>
+                            <span className="text-sm font-medium text-green-600">AI Bugta Act Assistant</span>
                             <Badge variant="secondary" className="text-xs">
                               Thinking...
                             </Badge>
@@ -190,25 +195,33 @@ export function ChatInterface() {
                         </div>
                         <div className="flex-1 space-y-1">
                           <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium">AI Assistant</span>
+                            <span className="text-sm font-medium text-green-600">AI Bugta Act Assistant</span>
                             <Badge variant="secondary" className="text-xs">
                               Completed
                             </Badge>
                           </div>
-                          <div className="group relative rounded-lg bg-secondary p-4">
-                            <div className="text-lg leading-relaxed whitespace-pre-wrap font-medium">{message.response}</div>
-                            <Button
-                              variant="ghost"
-                              size="sm"
-                              className="absolute right-2 top-2 opacity-0 transition-opacity group-hover:opacity-100"
-                              onClick={() => handleCopyResponse(message.response!, message.id)}
-                            >
-                              {copiedMessageId === message.id ? (
-                                <CheckCircle className="h-4 w-4" />
-                              ) : (
-                                <Copy className="h-4 w-4" />
-                              )}
-                            </Button>
+                          <div className="rounded-2xl bg-gradient-to-br from-secondary/80 to-muted/40 border border-secondary/30 p-4 shadow-lg">
+                            <div className="flex items-start justify-between gap-3">
+                              <div className="text-lg leading-relaxed whitespace-pre-wrap font-medium flex-1">{message.response}</div>
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                className="flex items-center gap-1 shrink-0 hover:bg-background/80 rounded-xl"
+                                onClick={() => handleCopyResponse(message.response!, message.id)}
+                              >
+                                {copiedMessageId === message.id ? (
+                                  <>
+                                    <CheckCircle className="h-4 w-4 text-green-600" />
+                                    <span className="text-xs font-bold text-green-600">Copied!</span>
+                                  </>
+                                ) : (
+                                  <>
+                                    <Copy className="h-4 w-4" />
+                                    <span className="text-xs font-bold">Copy</span>
+                                  </>
+                                )}
+                              </Button>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -221,7 +234,7 @@ export function ChatInterface() {
                         </div>
                         <div className="flex-1 space-y-1">
                           <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium">AI Assistant</span>
+                            <span className="text-sm font-medium text-green-600">AI Bugta Act Assistant</span>
                             <Badge variant="destructive" className="text-xs">
                               Error
                             </Badge>

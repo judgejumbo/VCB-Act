@@ -60,12 +60,12 @@ export default function Home() {
       <main className="container mx-auto flex-1 px-6 py-12">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl">
-            Your AI Assistant
-            <span className="text-primary"> Powered by n8n</span>
+            Villa Casablanca Private
+            <span className="text-primary"> Bugta Act Resource</span>
           </h1>
           <p className="mb-8 text-xl text-slate-600 dark:text-slate-400">
-            Get intelligent answers to your questions with secure, 
-            AI-powered workflows. Fast, reliable, and built for productivity.
+            Get intelligent answers to your questions about the Bugta Act with secure, 
+            AI-powered assistance. Fast, reliable, and built for legal research.
           </p>
           
           <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:justify-center">
@@ -100,7 +100,7 @@ export default function Home() {
               </div>
               <h3 className="mb-2 text-lg font-semibold">AI-Powered</h3>
               <p className="text-slate-600 dark:text-slate-400">
-                Leverage advanced AI workflows built with n8n for intelligent responses
+                Leverage advanced AI workflows for intelligent responses about the Bugta Act
               </p>
             </div>
 
@@ -120,7 +120,7 @@ export default function Home() {
               </div>
               <h3 className="mb-2 text-lg font-semibold">Fast</h3>
               <p className="text-slate-600 dark:text-slate-400">
-                Get responses in under 2 seconds with optimized webhook integrations
+                Get responses in under 2 seconds with optimized AI integrations
               </p>
             </div>
           </div>
@@ -136,7 +136,7 @@ export default function Home() {
               <span className="font-semibold">VCB Act Resource</span>
             </div>
             <p className="text-sm text-slate-600 dark:text-slate-400">
-              © 2024 VCB Act Resource. Powered by Next.js, Clerk, and n8n.
+              © Private VBC Group
             </p>
           </div>
         </div>

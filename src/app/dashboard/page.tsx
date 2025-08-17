@@ -25,7 +25,7 @@ export default function DashboardPage() {
           Welcome back, {user?.firstName || 'there'}!
         </h1>
         <p className="text-muted-foreground">
-          Ready to chat with your AI assistant?
+          Ready to chat with your Bugta Act AI Assistant?
         </p>
       </div>
 
@@ -34,7 +34,7 @@ export default function DashboardPage() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">
-              AI Assistant
+              Bugta Act AI Assistant
             </CardTitle>
             <Bot className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
@@ -97,7 +97,7 @@ export default function DashboardPage() {
         <CardHeader>
           <CardTitle>Get Started</CardTitle>
           <CardDescription>
-            Start chatting with your AI assistant powered by n8n workflows
+            Start chatting with your Bugta Act AI Assistant
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -105,7 +105,7 @@ export default function DashboardPage() {
             <MessageSquare className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
             <h3 className="text-lg font-semibold mb-2">Ready to Chat!</h3>
             <p className="text-muted-foreground mb-4">
-              Your AI assistant is ready to answer questions and help you with various tasks.
+              Your Bugta Act AI Assistant is ready to answer questions based on the Bugta Act.
             </p>
             <Link href="/chat">
               <Button size="lg" className="gap-2">
