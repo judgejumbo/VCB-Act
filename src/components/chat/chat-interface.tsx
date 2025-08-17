@@ -24,18 +24,19 @@ export function ChatInterface() {
   const handleSendMessage = async () => {
     if (!currentMessage.trim() || isLoading) return;
 
+    // Validate input using security middleware
+    const sanitizedMessage = validateMessageInput(currentMessage);
+    
+    // Create new message
+    const newMessage: ChatMessage = {
+      id: Date.now().toString(),
+      message: sanitizedMessage,
+      timestamp: new Date(),
+      userId: user?.id || 'anonymous',
+      status: 'pending',
+    };
+
     try {
-      // Validate input using security middleware
-      const sanitizedMessage = validateMessageInput(currentMessage);
-      
-      // Create new message
-      const newMessage: ChatMessage = {
-        id: Date.now().toString(),
-        message: sanitizedMessage,
-        timestamp: new Date(),
-        userId: user?.id || 'anonymous',
-        status: 'pending',
-      };
 
       setMessages(prev => [...prev, newMessage]);
       setCurrentMessage('');
