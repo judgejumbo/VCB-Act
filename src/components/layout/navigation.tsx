@@ -25,8 +25,8 @@ export function Navigation() {
           {/* Logo and main nav */}
           <div className="flex">
             <Link href="/dashboard" className="flex items-center gap-2">
-              <Bot className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold">VCB Act Resource</span>
+              <Bot className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+              <span className="text-lg sm:text-xl font-bold">VCB Act Resource</span>
             </Link>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               {navigation.map((item) => {

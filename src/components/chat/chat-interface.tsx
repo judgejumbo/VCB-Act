@@ -119,16 +119,16 @@ export function ChatInterface() {
   };
 
   return (
-    <div className="flex h-[600px] flex-col">
+    <div className="flex h-[500px] sm:h-[600px] flex-col">
       <Card className="flex-1 shadow-xl border-0 bg-gradient-to-br from-background to-muted/20">
-        <CardHeader className="border-b bg-gradient-to-r from-primary/5 to-secondary/5 rounded-t-lg">
-          <CardTitle className="flex items-center gap-2 text-xl">
-            <div className="p-2 rounded-lg bg-green-100 dark:bg-green-900/30">
-              <Bot className="h-5 w-5 text-green-600" />
+        <CardHeader className="border-b bg-gradient-to-r from-primary/5 to-secondary/5 rounded-t-lg px-3 sm:px-6 py-3 sm:py-4">
+          <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+            <div className="p-1.5 sm:p-2 rounded-lg bg-green-100 dark:bg-green-900/30">
+              <Bot className="h-4 w-4 sm:h-5 sm:w-5 text-green-600" />
             </div>
-            <div className="flex flex-col">
-              <span className="text-green-600">Bugta Act: AI Assistant</span>
-              <span className="text-sm font-normal text-muted-foreground">Get Answer Based On The Bugta Act</span>
+            <div className="flex flex-col min-w-0">
+              <span className="text-green-600 text-sm sm:text-base truncate">Bugta Act: AI Assistant</span>
+              <span className="text-xs sm:text-sm font-normal text-muted-foreground hidden sm:block">Get Answer Based On The Bugta Act</span>
             </div>
           </CardTitle>
         </CardHeader>
@@ -150,32 +150,32 @@ export function ChatInterface() {
                 {messages.map((message) => (
                   <div key={message.id} className="space-y-3">
                     {/* User Message */}
-                    <div className="flex items-start gap-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                        <User className="h-4 w-4" />
+                    <div className="flex items-start gap-2 sm:gap-3">
+                      <div className="flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                        <User className="h-3 w-3 sm:h-4 sm:w-4" />
                       </div>
-                      <div className="flex-1 space-y-1">
+                      <div className="flex-1 space-y-1 min-w-0">
                         <div className="flex items-center gap-2">
-                          <span className="text-sm font-medium">You</span>
-                          <span className="text-xs text-muted-foreground">
+                          <span className="text-xs sm:text-sm font-medium">You</span>
+                          <span className="text-xs text-muted-foreground hidden sm:inline">
                             {message.timestamp.toLocaleTimeString()}
                           </span>
                         </div>
-                        <div className="rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 p-4 shadow-sm">
-                          <div className="text-lg leading-relaxed whitespace-pre-wrap">{message.message}</div>
+                        <div className="rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 p-3 sm:p-4 shadow-sm">
+                          <div className="text-sm sm:text-lg leading-relaxed whitespace-pre-wrap break-words">{message.message}</div>
                         </div>
                       </div>
                     </div>
 
                     {/* AI Response */}
                     {message.status === 'pending' && (
-                      <div className="flex items-start gap-3">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-secondary-foreground">
-                          <Bot className="h-4 w-4" />
+                      <div className="flex items-start gap-2 sm:gap-3">
+                        <div className="flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-secondary text-secondary-foreground">
+                          <Bot className="h-3 w-3 sm:h-4 sm:w-4" />
                         </div>
-                        <div className="flex-1 space-y-2">
+                        <div className="flex-1 space-y-2 min-w-0">
                           <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium text-green-600">AI Bugta Act Assistant</span>
+                            <span className="text-xs sm:text-sm font-medium text-green-600 truncate">AI Bugta Act Assistant</span>
                             <Badge variant="secondary" className="text-xs">
                               Thinking...
                             </Badge>
@@ -190,35 +190,35 @@ export function ChatInterface() {
                     )}
 
                     {message.status === 'completed' && message.response && (
-                      <div className="flex items-start gap-3">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-secondary-foreground">
-                          <Bot className="h-4 w-4" />
+                      <div className="flex items-start gap-2 sm:gap-3">
+                        <div className="flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-secondary text-secondary-foreground">
+                          <Bot className="h-3 w-3 sm:h-4 sm:w-4" />
                         </div>
-                        <div className="flex-1 space-y-1">
+                        <div className="flex-1 space-y-1 min-w-0">
                           <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium text-green-600">AI Bugta Act Assistant</span>
+                            <span className="text-xs sm:text-sm font-medium text-green-600 truncate">AI Bugta Act Assistant</span>
                             <Badge variant="secondary" className="text-xs">
                               Completed
                             </Badge>
                           </div>
-                          <div className="rounded-2xl bg-gradient-to-br from-secondary/80 to-muted/40 border border-secondary/30 p-4 shadow-lg">
-                            <div className="flex items-start justify-between gap-3">
-                              <div className="text-lg leading-relaxed whitespace-pre-wrap font-medium flex-1">{message.response}</div>
+                          <div className="rounded-2xl bg-gradient-to-br from-secondary/80 to-muted/40 border border-secondary/30 p-3 sm:p-4 shadow-lg">
+                            <div className="flex flex-col sm:flex-row items-start justify-between gap-2 sm:gap-3">
+                              <div className="text-sm sm:text-lg leading-relaxed whitespace-pre-wrap font-medium flex-1 break-words">{message.response}</div>
                               <Button
                                 variant="ghost"
                                 size="sm"
-                                className="flex items-center gap-1 shrink-0 hover:bg-background/80 rounded-xl"
+                                className="flex items-center gap-1 shrink-0 hover:bg-background/80 rounded-xl self-end sm:self-start"
                                 onClick={() => handleCopyResponse(message.response!, message.id)}
                               >
                                 {copiedMessageId === message.id ? (
                                   <>
-                                    <CheckCircle className="h-4 w-4 text-green-600" />
-                                    <span className="text-xs font-bold text-green-600">Copied!</span>
+                                    <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-600" />
+                                    <span className="text-xs font-bold text-green-600 hidden sm:inline">Copied!</span>
                                   </>
                                 ) : (
                                   <>
-                                    <Copy className="h-4 w-4" />
-                                    <span className="text-xs font-bold">Copy</span>
+                                    <Copy className="h-3 w-3 sm:h-4 sm:w-4" />
+                                    <span className="text-xs font-bold hidden sm:inline">Copy</span>
                                   </>
                                 )}
                               </Button>
@@ -229,13 +229,13 @@ export function ChatInterface() {
                     )}
 
                     {message.status === 'error' && (
-                      <div className="flex items-start gap-3">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-destructive text-destructive-foreground">
-                          <Bot className="h-4 w-4" />
+                      <div className="flex items-start gap-2 sm:gap-3">
+                        <div className="flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-destructive text-destructive-foreground">
+                          <Bot className="h-3 w-3 sm:h-4 sm:w-4" />
                         </div>
-                        <div className="flex-1 space-y-1">
+                        <div className="flex-1 space-y-1 min-w-0">
                           <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium text-green-600">AI Bugta Act Assistant</span>
+                            <span className="text-xs sm:text-sm font-medium text-green-600 truncate">AI Bugta Act Assistant</span>
                             <Badge variant="destructive" className="text-xs">
                               Error
                             </Badge>
@@ -255,14 +255,14 @@ export function ChatInterface() {
           </ScrollArea>
 
           {/* Message Input */}
-          <div className="border-t p-4">
+          <div className="border-t p-3 sm:p-4">
             <div className="flex gap-2">
               <Textarea
                 value={currentMessage}
                 onChange={(e) => setCurrentMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Ask me anything..."
-                className="min-h-[60px] resize-none"
+                className="min-h-[50px] sm:min-h-[60px] resize-none text-sm sm:text-base"
                 maxLength={SECURITY.MAX_MESSAGE_LENGTH}
                 disabled={isLoading}
               />
@@ -270,12 +270,14 @@ export function ChatInterface() {
                 onClick={handleSendMessage}
                 disabled={!currentMessage.trim() || isLoading}
                 size="lg"
+                className="shrink-0"
               >
-                <Send className="h-4 w-4" />
+                <Send className="h-3 w-3 sm:h-4 sm:w-4" />
               </Button>
             </div>
-            <div className="mt-2 flex justify-between text-xs text-muted-foreground">
-              <span>Press Enter to send, Shift+Enter for new line</span>
+            <div className="mt-2 flex flex-col sm:flex-row justify-between text-xs text-muted-foreground gap-1">
+              <span className="hidden sm:inline">Press Enter to send, Shift+Enter for new line</span>
+              <span className="sm:hidden">Tap to send</span>
               <span>
                 {currentMessage.length}/{SECURITY.MAX_MESSAGE_LENGTH}
               </span>
